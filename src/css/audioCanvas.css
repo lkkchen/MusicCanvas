@@ -1,0 +1,171 @@
+*{margin: 0;padding: 0}
+.audioCanvas{
+    float: left;
+    width: 720px;
+    height: 405px;
+    position: relative;
+    cursor: default;
+    overflow: hidden;
+}
+
+.audioCanvas_ctrl{
+    width: 100%;
+    height: 45px;
+    /*background-color: rgba(0,100,0,0.5);*/
+    background-color: rgba(100,100,100,0.6);
+    text-align: center;
+    cursor: default;
+    transition: 0.4s ease-out;
+
+    position: absolute;
+    left: 0;
+
+    bottom: -45px;
+    opacity: 0;
+}
+.audioCanvas:hover .audioCanvas_ctrl{
+    bottom: 0;
+    opacity: 1;
+}
+.acRangeArea{
+    display: inline-block;
+    width: 95%;
+    height: 10px;
+    cursor: pointer;
+    /*background-color: whitesmoke;*/
+}
+.acRange{
+    display: inline-block;
+    width: 100%;
+    height: 3px;
+    background-color: white;
+    margin-top: 3px;
+}
+.acRange>.acplayed{
+    display: inline-block;
+    float: left;
+    width: 0;
+    height: 3px;
+    background-color: #f1a945;
+    position: relative;
+}
+.acRange>.acplayed>.seekBtn{
+    display: inline-block;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background-color: #f1a945;
+    transition: 0.2s ease-out;
+    position: absolute;
+    right: -5px;
+    top: -5px;
+
+    transform: scale(0);
+}
+.acRangeArea:hover .seekBtn{transform: scale(1);}
+
+.acBtnArea{
+    float: left;
+    width: 100%;
+    margin-top: -6px;
+    text-align: left;
+    cursor: pointer;
+    position: relative;
+}
+#acplay{
+    color: whitesmoke;
+    font-size: 18px;
+    display: inline-block;
+    float: left;
+    margin-left: 40px;
+    cursor: pointer;
+}
+#acplay:hover{color: #e7b13f}
+.acVolbox{
+    float: left;
+    height: 30px;
+    width: 25px;
+    /*width:100px;*/
+    margin-left: 20px;
+    transition: 0.3s ease-out;
+}
+#acVolbtn{
+    color: whitesmoke;
+    font-size: 20px;
+    display: inline-block;
+    float: left;
+    position: relative;
+    cursor: pointer;
+}
+#acVolbtn:hover{color: #e7b13f}
+.acVolBarBox{
+    cursor: pointer;
+    display: inline-block;
+    width: 0;
+    height: 30px;
+    position: absolute;
+    left: 28px;
+    top: 0;
+    transition: 0.3s ease-out;
+    opacity: 0;
+}
+.acVolBarbg{
+    display: inline-block;
+    width: 100%;
+    height: 2px;
+    background-color: whitesmoke;
+    position: absolute;
+    left: 0;
+    top: 9px;
+}
+.acVolBar{
+    cursor: pointer;
+    display: inline-block;
+    width: 80%;
+    height: 2px;
+    background-color: #e7b13f;
+    position: absolute;
+    left: 0;
+    top: 9px;
+    transition: 0.2s ease-out;
+}
+.acVolBar>span{
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #e7b13f;
+    position: absolute;
+    top: -4px;
+    right: -2px;
+}
+.acVolbox:hover{
+    width: 100px;
+}
+.acVolbox:hover .acVolBarBox{
+    width: 65px;
+    opacity: 1;
+}
+.acTime{
+    color: whitesmoke;
+    font-size: 14px;
+    width: 100px;
+    height: 25px;
+    line-height: 25px;
+    float: left;
+    margin-left: 10px;
+}
+
+.acPreNextArea{
+    float: left;
+    line-height:27px;
+}
+.acPreNextArea>span{
+    display: inline-block;
+    margin-right: 10px;
+    font-size: 17px;
+    color: whitesmoke;
+}
+.acPreNextArea>span:hover{
+    color: #e7b13f;
+}
