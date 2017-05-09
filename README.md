@@ -89,7 +89,7 @@ musicCanvas.drawing.addEventListener('onDrawing',function (dataArray) {
 # More Functions Coming Soon~
 ## Some Problems:
 ### Ajax file too slowly, use the stream data will be better
-### I want the drawing is complete control by users, or they can painting by mouse, Not the code we has write done
+### I want to make the drawing is complete control by users, or they can painting by mouse, Not the code we has write done
 
 
 
