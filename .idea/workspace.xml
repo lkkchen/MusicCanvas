@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ed76e4f9-1ac4-4c57-87f0-478c83672347" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/demo.html" afterPath="$PROJECT_DIR$/src/demo.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/js/musicCanvas.js" afterPath="$PROJECT_DIR$/src/js/musicCanvas.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -23,8 +21,8 @@
       <file leaf-file-name="demo.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/demo.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="392">
-              <caret line="32" column="0" lean-forward="true" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+            <state relative-caret-position="246">
+              <caret line="29" column="25" lean-forward="true" selection-start-line="29" selection-start-column="25" selection-end-line="29" selection-end-column="25" />
               <folding>
                 <element signature="n#style#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="e#840#2051#0" expanded="false" />
@@ -36,8 +34,8 @@
       <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="381">
-              <caret line="44" column="0" lean-forward="true" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
+            <state relative-caret-position="400">
+              <caret line="94" column="0" lean-forward="true" selection-start-line="94" selection-start-column="0" selection-end-line="94" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -46,20 +44,20 @@
       <file leaf-file-name="musicCanvas.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/js/musicCanvas.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="166">
-              <caret line="505" column="19" lean-forward="true" selection-start-line="503" selection-start-column="8" selection-end-line="505" selection-end-column="19" />
+            <state relative-caret-position="2759">
+              <caret line="597" column="0" lean-forward="true" selection-start-line="597" selection-start-column="0" selection-end-line="597" selection-end-column="0" />
               <folding>
                 <element signature="e#663#961#0" expanded="false" />
-                <element signature="e#1000#1010#0" expanded="false" />
-                <element signature="e#1439#1696#0" expanded="false" />
-                <element signature="e#11427#13725#0" expanded="false" />
-                <element signature="e#13752#14125#0" expanded="false" />
-                <element signature="e#14157#14320#0" expanded="false" />
-                <element signature="e#14362#14443#0" expanded="false" />
-                <element signature="e#14482#14577#0" expanded="false" />
-                <element signature="e#14624#14752#0" expanded="false" />
-                <element signature="e#14787#15135#0" expanded="false" />
-                <element signature="e#15183#15576#0" expanded="false" />
+                <element signature="e#1291#1548#0" expanded="false" />
+                <element signature="n#!!block;n#initCanvasDom#0" expanded="false" />
+                <element signature="e#11236#13534#0" expanded="false" />
+                <element signature="e#13561#13934#0" expanded="false" />
+                <element signature="e#13966#14129#0" expanded="false" />
+                <element signature="e#14171#14252#0" expanded="false" />
+                <element signature="e#14291#14386#0" expanded="false" />
+                <element signature="e#14433#14561#0" expanded="false" />
+                <element signature="e#14596#14944#0" expanded="false" />
+                <element signature="e#14992#15385#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -112,10 +110,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="133" />
-    <option name="y" value="7" />
-    <option name="width" value="1327" />
-    <option name="height" value="715" />
+    <option name="x" value="-62" />
+    <option name="y" value="1" />
+    <option name="width" value="1378" />
+    <option name="height" value="758" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="1" id="Add" />
@@ -147,38 +145,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MusicCanvas" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MusicCanvas" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MusicCanvas" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MusicCanvas" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
@@ -196,13 +162,13 @@
     <property name="nodejs_interpreter_path" value="F:/webproject/nodejs/node" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\webworkspace\musicAPI\MusicCanvas\src\js" />
-      <recent name="D:\webworkspace\musicAPI\MusicCanvas\src\css" />
+    <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\webworkspace\musicAPI\MusicCanvas" />
       <recent name="D:\webworkspace\musicAPI\MusicCanvas\src" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\webworkspace\musicAPI\MusicCanvas\src\js" />
+      <recent name="D:\webworkspace\musicAPI\MusicCanvas\src\css" />
       <recent name="D:\webworkspace\musicAPI\MusicCanvas" />
       <recent name="D:\webworkspace\musicAPI\MusicCanvas\src" />
     </key>
@@ -302,18 +268,18 @@
       <workItem from="1494306728285" duration="2150000" />
       <workItem from="1494322045053" duration="127000" />
       <workItem from="1494322360681" duration="2129000" />
-      <workItem from="1494330057176" duration="5376000" />
+      <workItem from="1494330057176" duration="7781000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28295000" />
+    <option name="totallyTimeSpent" value="30700000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="133" y="7" width="1327" height="715" extended-state="0" />
+    <frame x="-62" y="1" width="1378" height="758" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21334368" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20522387" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -442,28 +408,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/js/musicCanvas.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="166">
-          <caret line="505" column="19" lean-forward="true" selection-start-line="503" selection-start-column="8" selection-end-line="505" selection-end-column="19" />
+        <state relative-caret-position="2759">
+          <caret line="597" column="0" lean-forward="true" selection-start-line="597" selection-start-column="0" selection-end-line="597" selection-end-column="0" />
           <folding>
             <element signature="e#663#961#0" expanded="false" />
-            <element signature="e#1000#1010#0" expanded="false" />
-            <element signature="e#1439#1696#0" expanded="false" />
-            <element signature="e#11427#13725#0" expanded="false" />
-            <element signature="e#13752#14125#0" expanded="false" />
-            <element signature="e#14157#14320#0" expanded="false" />
-            <element signature="e#14362#14443#0" expanded="false" />
-            <element signature="e#14482#14577#0" expanded="false" />
-            <element signature="e#14624#14752#0" expanded="false" />
-            <element signature="e#14787#15135#0" expanded="false" />
-            <element signature="e#15183#15576#0" expanded="false" />
+            <element signature="e#1291#1548#0" expanded="false" />
+            <element signature="n#!!block;n#initCanvasDom#0" expanded="false" />
+            <element signature="e#11236#13534#0" expanded="false" />
+            <element signature="e#13561#13934#0" expanded="false" />
+            <element signature="e#13966#14129#0" expanded="false" />
+            <element signature="e#14171#14252#0" expanded="false" />
+            <element signature="e#14291#14386#0" expanded="false" />
+            <element signature="e#14433#14561#0" expanded="false" />
+            <element signature="e#14596#14944#0" expanded="false" />
+            <element signature="e#14992#15385#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/demo.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="392">
-          <caret line="32" column="0" lean-forward="true" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+        <state relative-caret-position="246">
+          <caret line="29" column="25" lean-forward="true" selection-start-line="29" selection-start-column="25" selection-end-line="29" selection-end-column="25" />
           <folding>
             <element signature="n#style#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="e#840#2051#0" expanded="false" />
@@ -473,8 +439,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="381">
-          <caret line="44" column="0" lean-forward="true" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
+        <state relative-caret-position="400">
+          <caret line="94" column="0" lean-forward="true" selection-start-line="94" selection-start-column="0" selection-end-line="94" selection-end-column="0" />
           <folding />
         </state>
       </provider>

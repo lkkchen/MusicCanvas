@@ -40,13 +40,10 @@ Visualizer.prototype = {
 			console.log('Your must put ArrayBuffer Object!!!');
 			return 0;
 		}
-	}, //初始化，注入变量
-	_prepareAPI:function () {//初始化全局API
-		//统一前缀，方便调用
+	},
+	_prepareAPI:function () {
 		window.AudioContext = window.AudioContext || window.webkitAudioContext || window.mozAudioContext || window.msAudioContext;
-		//这里顺便也将requestAnimationFrame也打个补丁，后面用来写动画要用
 		window.requestAnimationFrame = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.msRequestAnimationFrame;
-		//安全地实例化一个AudioContext并赋值到Visualizer的audioContext属性上，方便后面处理音频使用
 		try {
 			this._audioCtx = new AudioContext();
 			
@@ -57,8 +54,7 @@ Visualizer.prototype = {
 			this._gainNode.connect(this._audioCtx.destination);
 			
 		} catch (e) {
-			alert('!你的浏览器不支持AudioContext:(');
-			console.log('!妳的浏览器不支持AudioContext:(');
+			alert('!你的浏览器不支持AudioContext ！');
 			console.log(e);
 		}
 	},
