@@ -57,32 +57,32 @@ musicCanvas.audioApi.addEventListener('ended',function () {
 #### The callback provide a Parameter of Array, the Array has the realtime audio frequency data ,and you can use these data to painting
 #### Like this:
 ```js
-	var musicCanvas = new initMusicCanvas().init('myAcBox',{needPreNext:true}).bySelectFile('ff');
-	var canvas = musicCanvas.canvas;
-	var ctx = musicCanvas.ctx;
+var musicCanvas = new initMusicCanvas().init('myAcBox',{needPreNext:true}).bySelectFile('ff');
+var canvas = musicCanvas.canvas;
+var ctx = musicCanvas.ctx;
 
-	musicCanvas.audioApi.addEventListener('loading',function () {
-		canvas.width=720;
-		canvas.height=405;
-	});
+musicCanvas.audioApi.addEventListener('loading',function () {
+    canvas.width=720;
+    canvas.height=405;
+});
 
-	musicCanvas.drawing.addEventListener('onDrawing',function (dataArray) {
-	    var cwidth = canvas.width,cheight = canvas.height;
-        var mid=0,head=0;
-        var len = dataArray.length
-        for(var j=600;j<len;j++){
-            mid=mid+dataArray[j]
-        }
-        for(var k=0;k<20;k++){
-            head=head+dataArray[k]
-        }
-        ctx.beginPath();
-        ctx.fillStyle='#fee';
-        ctx.arc(cwidth/4,cheight/2,head/20*size,0,Math.PI*2);
-        ctx.arc(cwidth/2,cheight/2,mid/623*size*3,0,Math.PI*2);
-        ctx.closePath();
-        ctx.fill();
-	})
+musicCanvas.drawing.addEventListener('onDrawing',function (dataArray) {
+    var cwidth = canvas.width,cheight = canvas.height;
+    var mid=0,head=0;
+    var len = dataArray.length
+    for(var j=600;j<len;j++){
+        mid=mid+dataArray[j]
+    }
+    for(var k=0;k<20;k++){
+        head=head+dataArray[k]
+    }
+    ctx.beginPath();
+    ctx.fillStyle='#fee';
+    ctx.arc(cwidth/4,cheight/2,head/20*size,0,Math.PI*2);
+    ctx.arc(cwidth/2,cheight/2,mid/623*size*3,0,Math.PI*2);
+    ctx.closePath();
+    ctx.fill();
+})
 ```
 ![Image text](https://github.com/Studying-Man/MusicCanvas/blob/master/demo2.png?raw=true)
 
