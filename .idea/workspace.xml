@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="ed76e4f9-1ac4-4c57-87f0-478c83672347" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/demo.html" afterPath="$PROJECT_DIR$/src/demo.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/bootstrap.min.css" afterPath="$PROJECT_DIR$/src/css/bootstrap.min.css" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/musicCanvas.js" afterPath="$PROJECT_DIR$/src/js/musicCanvas.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -20,14 +18,24 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="demo.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="demo.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/demo.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="200">
-              <caret line="8" column="6" lean-forward="true" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
+              <caret line="8" column="6" lean-forward="false" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
               <folding>
                 <element signature="n#style#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -58,7 +66,6 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src.html" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/src/test.html" />
         <option value="$PROJECT_DIR$/src/mixApi_list.js" />
         <option value="$PROJECT_DIR$/jsel.html" />
@@ -67,6 +74,7 @@
         <option value="$PROJECT_DIR$/src/css/audioCanvas.css" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/demo.html" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -77,8 +85,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="45" />
-    <option name="y" value="6" />
+    <option name="x" value="122" />
+    <option name="y" value="40" />
     <option name="width" value="1292" />
     <option name="height" value="703" />
   </component>
@@ -101,6 +109,7 @@
     </navigator>
     <panes>
       <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -129,7 +138,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -247,15 +255,16 @@
       <workItem from="1494222797424" duration="7777000" />
       <workItem from="1494244296927" duration="10736000" />
       <workItem from="1494306728285" duration="2150000" />
-      <workItem from="1494322045053" duration="68000" />
+      <workItem from="1494322045053" duration="127000" />
+      <workItem from="1494322360681" duration="302000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20731000" />
+    <option name="totallyTimeSpent" value="21092000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="45" y="6" width="1292" height="703" extended-state="0" />
+    <frame x="122" y="40" width="1292" height="703" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21929824" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -301,6 +310,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/demo.html">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#style#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/demo.html">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="6" column="42" lean-forward="true" selection-start-line="6" selection-start-column="42" selection-end-line="6" selection-end-column="42" />
           <folding>
@@ -329,13 +348,6 @@
     <entry file="file://$PROJECT_DIR$/src/mixApi_list.js" />
     <entry file="file://$PROJECT_DIR$/jsel.html" />
     <entry file="file://$PROJECT_DIR$/src/test.html" />
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test2.html" />
     <entry file="file://$PROJECT_DIR$/src/css/bootstrap.min.css">
       <provider selected="true" editor-type-id="text-editor">
@@ -383,10 +395,18 @@
     <entry file="file://$PROJECT_DIR$/src/demo.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
-          <caret line="8" column="6" lean-forward="true" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
+          <caret line="8" column="6" lean-forward="false" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
           <folding>
             <element signature="n#style#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
