@@ -564,7 +564,38 @@ initMusicCanvas.prototype={
 		};
 		
 		return this.tools;
-	}
+	},
+	byArrayBuffer:function (bufArray) {
+		var audioapi = this.tools.audioApi;
+		var drawing = this.tools.drawing;
+		var ac = this.tools.ac;
+		
+		audioapi.stop();
+		audioapi.init(bufArray,function () {
+			console.log('decode successful');
+		});
+		
+		ac.updateBtnOnLoad();
+		audioapi.addEventListener('playing',function (){
+			ac._addEventListener();
+			ac._setFullTimeNumber();
+		});
+		
+		audioapi.addEventListener('ended',function () {
+			ac._updateBtn();
+		});
+		audioapi.addEventListener('drawing',function (nowtime,array) {
+			var timePercent = nowtime/audioapi.duration();
+			ac.timeBarfollowMusic(timePercent,nowtime);
+			drawing.onDrawing(array);
+		});
+		
+		drawing.addEventListener=function(event, callback) {
+			this[event] = callback;
+		};
+		
+		return this.tools;
+	},
 };
 
 
