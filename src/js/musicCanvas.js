@@ -26,12 +26,12 @@ var Visualizer = function() {
 	this._loop = false;
 	this.autoPlay = false;
 	this.animationId  = null;
-};//初始化一些变量
+};
 
 Visualizer.prototype = {
 	init:function (bufferArray,loadedCallback) {
 		this._prepareAPI();
-		if(bufferArray==null){
+		if(bufferArray===null || bufferArray==='undefined'){
 			console.log('Your must put ArrayBuffer Object!!!');
 			return 0;
 		}else if(bufferArray instanceof ArrayBuffer){
@@ -54,7 +54,7 @@ Visualizer.prototype = {
 			this._gainNode.connect(this._audioCtx.destination);
 			
 		} catch (e) {
-			alert('!你的浏览器不支持AudioContext ！');
+			alert('你的浏览器不支持AudioContext-!_!-');
 			console.log(e);
 		}
 	},
@@ -69,8 +69,8 @@ Visualizer.prototype = {
 		that._playListPositon = that._bufferSavedList.length-1;
 	},
 	_prepareData:function (bufferArray,loadedCallback) {
+		//准备音频数据
 		var that = this;
-		
 		that._callbacks.loading();
 		
 		var error = function (error) { console.error("Failed to decode:", error);
@@ -85,7 +85,7 @@ Visualizer.prototype = {
 			console.log('decoded scuessful');
 			that.play(0);
 		}, error);
-	}, //准备音频数据
+	},
 	_playPrve:function (){
 		var that = this;
 		that.stop();
@@ -93,7 +93,6 @@ Visualizer.prototype = {
 		if(that._playListPositon<=0){
 			that._playListPositon=0;
 		}
-		console.log('_realplayedtime is:'+that._realplayedtime);
 		that._playToListIndex(that._playListPositon);
 	},
 	_playNext:function () {
@@ -115,7 +114,6 @@ Visualizer.prototype = {
 			
 			that._realplayedtime = typeof position !== 'undefined' ? position : that._realplayedtime;
 			that._quietime = that._audioCtx.currentTime - that._realplayedtime;
-			console.log('_quietime is:'+that._quietime);
 			audioBufferSouce.start(0, that._realplayedtime);
 			that._source = audioBufferSouce;
 			
@@ -136,7 +134,6 @@ Visualizer.prototype = {
 			
 			that._realplayedtime = typeof position !== 'undefined' ? position : that._realplayedtime;
 			that._quietime = that._audioCtx.currentTime - that._realplayedtime;
-			console.log('_quietime is:'+that._quietime);
 			audioBufferSouce.start(0, that._realplayedtime);
 			that._source = audioBufferSouce;
 			
@@ -146,7 +143,7 @@ Visualizer.prototype = {
 			that._drawSpectrum();
 		}
 	},
-	_drawSpectrum:function(){//绘图函数，该函数将会回调出去，在外部进行DIY绘图
+	_drawSpectrum:function(){//绘图函数
 		var that = this;
 		var drawMeter = function(){
 			var array = new Uint8Array(that._analyser.frequencyBinCount);
@@ -170,7 +167,6 @@ Visualizer.prototype = {
 	pause: function(){
 		var that = this;
 		if(!that._playing){
-			console.log('real played '+that._realplayedtime);
 			that.play(that._realplayedtime);
 			return;
 		}
@@ -225,6 +221,15 @@ function initCanvasDom(audioapi) {
 	var AudioCanvas = function () {
 		this.acRangeLeft= null;
 		this.acRangeWidth= null;
+		this.acOriginWidth= 720;
+		this.acOriginHeight= 405;
+		
+		this.lockFlag=true;
+		this.oldState=false;
+		this.listenTime=null;
+		this.fullScreenEvent={
+			fullchange:function () {}
+		};
 		
 		this.acPlayBtn= null;
 		this.acplayed= null;
@@ -235,7 +240,9 @@ function initCanvasDom(audioapi) {
 		this.acQuiet= false;
 		this.clickDown= false;
 		this.timeMovePercent = null;
+		this.clickTimePos = null;
 		this.onlyClick= false;
+		this.timeOut= null;
 	};
 	AudioCanvas.prototype={
 		_getElementRealLeft:function (element) {
@@ -247,13 +254,24 @@ function initCanvasDom(audioapi) {
 			}
 			return actualLeft;
 		},
+		_getElementLeft:function (element) {
+			return element.offsetLeft;
+		},
 		_createMusicCANVASDom:function (boxID,options) {
 			var maxBox = document.createElement('section');
 			maxBox.setAttribute('class','audioCanvas');
+			
+			if(options && options.size && options.size instanceof Object){
+				this.acOriginWidth = options.size.width;
+				this.acOriginHeight = options.size.height;
+			}
+			maxBox.style.width = this.acOriginWidth + 'px';
+			maxBox.style.height = this.acOriginHeight + 'px';
+			
 			var canvas = document.createElement('canvas');
 			canvas.setAttribute('id','MusicCanvas');
-			canvas.width=720;
-			canvas.height=405;
+			canvas.width=this.acOriginWidth;
+			canvas.height=this.acOriginHeight;
 			canvas.innerHTML='你的浏览器不支持canvas!';
 			canvas.style.backgroundColor = '#0f0f0f';
 			maxBox.appendChild(canvas);
@@ -316,7 +334,7 @@ function initCanvasDom(audioapi) {
 			acBtnArea.appendChild(acVolbox);
 			acBtnArea.appendChild(acTime);
 			
-			if(options != 'undefined' && options instanceof Object){
+			if(options !== 'undefined' && options instanceof Object){
 				if(options.needPreNext){
 					var acPreNextArea = document.createElement('div');
 					acPreNextArea.setAttribute('class','acPreNextArea')
@@ -332,6 +350,14 @@ function initCanvasDom(audioapi) {
 					acBtnArea.appendChild(acPreNextArea);
 				}
 			}
+			
+			var acfullscreenArea = document.createElement('div');
+			acfullscreenArea.setAttribute('class','acfullscreenArea');
+			var acfullscreen = document.createElement('span');
+			acfullscreen.setAttribute('id','acfullscreen')
+			acfullscreen.setAttribute('class','glyphicon glyphicon-fullscreen')
+			acfullscreenArea.appendChild(acfullscreen);
+			acBtnArea.appendChild(acfullscreenArea);
 			
 			ctrlBox.appendChild(acBtnArea);
 			maxBox.appendChild(ctrlBox);
@@ -350,16 +376,85 @@ function initCanvasDom(audioapi) {
 			this.acPlayBtn = document.querySelector('#acplay');
 			this.acVolBar = document.querySelector('.acVolBar');
 			
-			// document.querySelector('.audioCanvas').style.width='100%';
-			// document.querySelector('.audioCanvas').style.height=405/720*document.querySelector('.audioCanvas').offsetWidth+'px';
 			return this;
+		},
+		_launchIntoFullscreen:function(){
+			var audioCanvasEL= document.querySelector('.audioCanvas');
+			if(audioCanvasEL.requestFullscreen) {
+				audioCanvasEL.requestFullscreen();
+			} else if(audioCanvasEL.mozRequestFullScreen) {
+				audioCanvasEL.mozRequestFullScreen();
+			} else if(audioCanvasEL.webkitRequestFullscreen) {
+				audioCanvasEL.webkitRequestFullscreen();
+			} else if(audioCanvasEL.msRequestFullscreen) {
+				audioCanvasEL.msRequestFullscreen();
+			}
+			var canvas = document.querySelector('#MusicCanvas');
+			var W = window.screen.width;
+			var H = window.screen.height;
+			audioCanvasEL.style.width = W + 'px';
+			audioCanvasEL.style.height = H + 'px';
+			canvas.width = W ;
+			canvas.height = H ;
+			
+			this.acRangeLeft = this._getElementLeft(document.querySelector('.acRangeArea'));
+			this.acRangeWidth = document.querySelector('.acRangeArea').offsetWidth;
+		},
+		_quitFullScreen:function () {
+			var audioCanvasEL= document.querySelector('.audioCanvas');
+			var canvas = document.querySelector('#MusicCanvas');
+			audioCanvasEL.style.width = this.acOriginWidth + 'px';
+			audioCanvasEL.style.height = this.acOriginHeight + 'px';
+			canvas.width = this.acOriginWidth ;
+			canvas.height = this.acOriginHeight ;
+			this.acRangeLeft = this._getElementRealLeft(document.querySelector('.acRangeArea'));
+			this.acRangeWidth = document.querySelector('.acRangeArea').offsetWidth;
+			
+		},
+		_getFullScreenState:function(){
+			return document.fullscreen ||
+				document.webkitIsFullScreen ||
+				document.mozFullScreen ||
+				false;
+		},
+		_startListenState:function () {
+			var that = this;
+			that.listenTime = setInterval(function () {
+				if(that.oldState !== that._getFullScreenState() ){
+					if(that.lockFlag){
+						that.fullScreenEvent.fullchange();
+						that.oldState=that._getFullScreenState();
+						that.lockFlag = false;
+					}
+				}else{
+					that.lockFlag = true;
+				}
+			},0)
+			
+			that.fullScreenEvent.addStateListener=function (event,callback) {
+				that.fullScreenEvent[event] = callback;
+			}
 		},
 		_addEventListener:function(){
 			var that = this;
+			that._startListenState();
+			
+			document.querySelector('#acfullscreen').onclick=function () {
+				that._launchIntoFullscreen();
+			};
+			that.fullScreenEvent.addStateListener('fullchange',function () {
+				if(that._getFullScreenState() === false){
+					that._quitFullScreen();
+				}
+			});
+			
 			document.querySelector('.acRangeArea').onmousedown=function (e) {
 				that.clickDown = true;
 				that.onlyClick = true;
 				that.timeMovePercent = (e.clientX-that.acRangeLeft)/that.acRangeWidth;
+				
+				that.clickTimePos = parseInt(e.clientX-that.acRangeLeft);
+				
 				that._setTimeBarPoint(that.timeMovePercent);
 				audioapi.seekToTime(that.timeMovePercent);
 				that.acIsPlay = true;
@@ -374,16 +469,28 @@ function initCanvasDom(audioapi) {
 				}
 			};
 			document.querySelector('.audioCanvas').onmousemove=function (e) {
-				that.onlyClick = false;
-				var sxx = (e.clientX-that.acRangeLeft)/that.acRangeWidth;
-				if(sxx < 1 ){
-					if(sxx <=0){
-						that.timeMovePercent = 0;
+				// 2s later, hidden the ctrl Area without action
+				clearTimeout(that.timeOut);
+				var actrl = document.querySelector('.audioCanvas_ctrl');
+				that.timeOut = setTimeout(function () {
+					actrl.style.opacity=0;
+					actrl.style.bottom=-45+'px';
+				},2000)
+				actrl.style.opacity=1;
+				actrl.style.bottom=0;
+				
+				if(that.clickTimePos !== parseInt(e.clientX-that.acRangeLeft)){
+					that.onlyClick = false;
+					var sxx = (e.clientX-that.acRangeLeft)/that.acRangeWidth;
+					if(sxx < 1 ){
+						if(sxx <=0){
+							that.timeMovePercent = 0;
+						}else{
+							that.timeMovePercent = sxx;
+						}
 					}else{
-						that.timeMovePercent = sxx;
+						that.timeMovePercent = 1
 					}
-				}else{
-					that.timeMovePercent = 1
 				}
 				if(that.clickDown){
 					that._setTimeBarPoint(that.timeMovePercent);
@@ -398,7 +505,7 @@ function initCanvasDom(audioapi) {
 				that._setVolPoint(volPercent);
 			};
 			document.querySelector('#acVolbtn').onclick=function (){
-				if(that.acQuiet == false){
+				if(that.acQuiet === false){
 					that._setVolPoint(0);
 					this.removeAttribute('class');
 					this.setAttribute('class','glyphicon glyphicon-volume-off');
@@ -417,7 +524,6 @@ function initCanvasDom(audioapi) {
 			};
 			if(document.querySelector("#acprve")){
 				document.querySelector("#acprve").onclick=function () {
-					console.log('_playPrve');
 					audioapi._playPrve();
 					that.acIsPlay =true;
 					that._updateBtn();
@@ -425,7 +531,6 @@ function initCanvasDom(audioapi) {
 			}
 			if(document.querySelector("#acnext")){
 				document.querySelector("#acnext").onclick=function () {
-					console.log('_playNext');
 					audioapi._playNext();
 					that.acIsPlay =true;
 					that._updateBtn();
@@ -434,7 +539,6 @@ function initCanvasDom(audioapi) {
 		},
 		_updateBtn:function () {
 			var that = this;
-			console.log(that.acIsPlay);
 			if(that.acIsPlay){
 				that.acPlayBtn.removeAttribute('class');
 				that.acPlayBtn.setAttribute('class','glyphicon glyphicon-pause');
@@ -504,6 +608,7 @@ var initMusicCanvas=function() {
 }
 initMusicCanvas.prototype={
 	init:function (boxID,options) {
+		var that = this;
 		this.tools.audioApi=new Visualizer();
 		this.tools.ac=initCanvasDom(this.tools.audioApi);
 		this.tools.ac.init(boxID,options);
@@ -512,9 +617,11 @@ initMusicCanvas.prototype={
 		};
 		
 		this.tools.canvas=document.getElementById('MusicCanvas');
-		var cw = document.querySelector('.audioCanvas').offsetWidth;
-		this.tools.canvas.width=cw;
-		this.tools.canvas.height=405/720*cw;
+		this.tools.audioApi.addEventListener('loading',function () {
+			// reset the canvas size to clean the image
+			that.tools.canvas.width=that.tools.ac.acOriginWidth;
+			that.tools.canvas.height=that.tools.ac.acOriginHeight;
+		});
 		this.tools.ctx = this.tools.canvas.getContext('2d');
 		
 		return this;
@@ -533,7 +640,7 @@ initMusicCanvas.prototype={
 				audioapi.stop();
 				var buffer = e.target.result;
 				audioapi.init(buffer,function () {
-					console.log(111);
+					// todo loaded buffer over
 				});
 				
 				ac.updateBtnOnLoad();
@@ -568,7 +675,7 @@ initMusicCanvas.prototype={
 		
 		audioapi.stop();
 		audioapi.init(bufArray,function () {
-			console.log('decode successful');
+			// console.log('decode successful');
 		});
 		
 		ac.updateBtnOnLoad();

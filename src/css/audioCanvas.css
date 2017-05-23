@@ -1,8 +1,5 @@
 *{margin: 0;padding: 0}
 .audioCanvas{
-    float: left;
-    width: 720px;
-    height: 405px;
     position: relative;
     cursor: default;
     overflow: hidden;
@@ -11,7 +8,6 @@
 .audioCanvas_ctrl{
     width: 100%;
     height: 45px;
-    /*background-color: rgba(0,100,0,0.5);*/
     background-color: rgba(100,100,100,0.6);
     text-align: center;
     cursor: default;
@@ -22,6 +18,8 @@
 
     bottom: -45px;
     opacity: 0;
+    /*bottom: 0;*/
+    /*opacity: 1;*/
 }
 .audioCanvas:hover .audioCanvas_ctrl{
     bottom: 0;
@@ -169,3 +167,21 @@
 .acPreNextArea>span:hover{
     color: #e7b13f;
 }
+
+
+.acfullscreenArea{
+    float: right;
+    margin-right: 30px;
+    line-height:27px;
+}
+.acfullscreenArea>span{
+    display: inline-block;
+    margin-right: 10px;
+    font-size: 17px;
+    color: whitesmoke;
+}
+.acfullscreenArea>span:hover{
+    color: #e7b13f;
+}
+
+

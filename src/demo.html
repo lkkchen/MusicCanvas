@@ -5,33 +5,36 @@
     <title>Title</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/audioCanvas.css">
+
 </head>
 <body>
 
+<input type="file" id="ff">
+<div id="box">
 
+</div>
 
-<input type="file" id="ff" accept="audio/mpeg">
-<section id="myAcBox" style="margin-left: 200px">
-
-</section>
 
 <script src="js/musicCanvas.js"></script>
 
-<script>
-window.onload=function () {
 
-	var musicCanvas = new initMusicCanvas().init('myAcBox',{needPreNext:true}).bySelectFile('ff');
-	var canvas = musicCanvas.canvas;
-	var ctx = musicCanvas.ctx;
+<script>
+	var options={
+		needPreNext:true,
+		size:{
+			width: 720,
+			height: 405,
+		}
+	};
+
+    var MusicCanvas=new initMusicCanvas().init('box',options).bySelectFile('ff');
+	var canvas = MusicCanvas.canvas;
+	var ctx = MusicCanvas.ctx;
 
 	var cwidth = canvas.width,cheight = canvas.height;
 	var ctColor = '#502D63',capArray=[];
-	musicCanvas.audioApi.addEventListener('loading',function () {
-		canvas.width=720;
-		canvas.height=405;
-	});
 
-	musicCanvas.drawing.addEventListener('onDrawing',function (array) {
+	MusicCanvas.drawing.addEventListener('onDrawing',function (array) {
 		cwidth = canvas.width;
 		cheight = canvas.height;
 		ctx.clearRect(0, 0, cwidth, cheight);
@@ -57,32 +60,31 @@ window.onload=function () {
 		ctx.restore();
 
 		ctx.save();
-        ctx.translate(cwidth/4,cheight/2);
-        for(var kk=0;kk<1024;kk++){
-            var nowvalue=array[kk];
-            ctx.fillStyle='#eee';
-            if(capArray.length<1024){
-                capArray.push(nowvalue);
-            }
-            ctx.rotate(0.5);
-            if(nowvalue>capArray[kk]*0.55){
-                ctx.fillRect(0,++capArray[kk]*1.3,2,1);
-            }else{
-                ctx.fillRect(0,nowvalue,2,1);
-                capArray[kk]=nowvalue;
-            }
-            ctx.fillStyle=ctColor;
-            ctx.beginPath();
-            ctx.rect(0,0,array[kk]*1.5,1);
-            ctx.fill();
-        }
-        ctx.restore();
+		ctx.translate(cwidth/4,cheight/2);
+		for(var kk=0;kk<1024;kk++){
+			var nowvalue=array[kk];
+			ctx.fillStyle='#eee';
+			if(capArray.length<1024){
+				capArray.push(nowvalue);
+			}
+			ctx.rotate(0.5);
+			if(nowvalue>capArray[kk]*0.55){
+				ctx.fillRect(0,++capArray[kk]*1.3,2,1);
+			}else{
+				ctx.fillRect(0,nowvalue,2,1);
+				capArray[kk]=nowvalue;
+			}
+			ctx.fillStyle=ctColor;
+			ctx.beginPath();
+			ctx.rect(0,0,array[kk]*1.5,1);
+			ctx.fill();
+		}
+		ctx.restore();
 	})
-}
+
+
+
 </script>
-
-
-
 
 </body>
 </html>

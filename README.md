@@ -18,12 +18,22 @@ Use AudioContext to Analysis of the Audio data to synchronize the canvas
 </section>
 ```
 
-#3 Then write your JS to init the MusicCanvas, like this:
-
+#3 Then write your JS to init the MusicCanvas,
+    First Parameter is input tag id, Necessary
+    Second Parameter is a object for the options, It's not necessary
+like this:
 ```js
-var MC = new initMusicCanvas().init('myAcBox',{needPreNext:true});
+var options={
+    needPreNext:true,  //enable the buffer list
+    //set canvas size
+    size:{
+			width: 720,
+			height: 405,
+	}
+}
+var MC = new initMusicCanvas().init('myAcBox',options);
 
-//load Music by Select local file, Parameter is input tag id
+//Load Music by Select local file
 var musicCanvas = MC.bySelectFile('ff');
 
 //load Music by ArrayBuffer
@@ -60,11 +70,6 @@ musicCanvas.audioApi.addEventListener('ended',function () {
 var musicCanvas = new initMusicCanvas().init('myAcBox',{needPreNext:true}).bySelectFile('ff');
 var canvas = musicCanvas.canvas;
 var ctx = musicCanvas.ctx;
-
-musicCanvas.audioApi.addEventListener('loading',function () {
-    canvas.width=720;
-    canvas.height=405;
-});
 
 musicCanvas.drawing.addEventListener('onDrawing',function (dataArray) {
     var cwidth = canvas.width,cheight = canvas.height;
