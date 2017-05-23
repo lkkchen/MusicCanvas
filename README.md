@@ -19,7 +19,7 @@ Use AudioContext to Analysis of the Audio data to synchronize the canvas
 ```
 
 #3 Then write your JS to init the MusicCanvas,
-    First Parameter is input tag id, Necessary
+    First Parameter is input tag id, Necessary \r\n
     Second Parameter is a object for the options, It's not necessary
 like this:
 ```js
@@ -27,8 +27,8 @@ var options={
     needPreNext:true,  //enable the buffer list
     //set canvas size
     size:{
-			width: 720,
-			height: 405,
+        width: 720,
+        height: 405,
 	}
 }
 var MC = new initMusicCanvas().init('myAcBox',options);
