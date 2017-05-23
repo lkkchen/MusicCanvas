@@ -30,8 +30,8 @@
       <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="328">
-              <caret line="31" column="5" lean-forward="true" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
+            <state relative-caret-position="278">
+              <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -89,8 +89,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="225" />
-    <option name="y" value="21" />
+    <option name="x" value="162" />
+    <option name="y" value="32" />
     <option name="width" value="1309" />
     <option name="height" value="730" />
   </component>
@@ -265,15 +265,15 @@
       <workItem from="1494322360681" duration="2129000" />
       <workItem from="1494330057176" duration="8400000" />
       <workItem from="1495521503519" duration="8000" />
-      <workItem from="1495535627375" duration="6362000" />
+      <workItem from="1495535627375" duration="6514000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="37689000" />
+    <option name="totallyTimeSpent" value="37841000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="225" y="21" width="1309" height="730" extended-state="0" />
+    <frame x="162" y="32" width="1309" height="730" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21557829" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -480,8 +480,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="328">
-          <caret line="31" column="5" lean-forward="true" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
+        <state relative-caret-position="278">
+          <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
           <folding />
         </state>
       </provider>
